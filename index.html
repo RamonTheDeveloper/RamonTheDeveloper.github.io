@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio interativo com a temática do Super Mario Bros do NES, desenvolvido em JavaScript, destacando projetos de software, meu website e redes profissionais.">
+    <meta name="keywords" content="Portfólio, Desenvolvedor, Super Mario, Jogo Retrô, JavaScript, Projetos, Website, Tecnologia">
+    <meta name="author" content="Gabriel Ramon de Souza Ramos">
+    <title>Portfólio de Gabriel Ramon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mario-style.css">
+</head>
+<body>
+    <div id="welcome-screen">
+        <div class="content-wrapper">
+            <h1 id="title">Seja bem-vindo ao Menu Principal</h1>
+            <div id="grid">
+                <div class="pixel-block projeto" data-info="software" aria-label="Sobre meus projetos de software">
+                    <svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 17H5V5h14v14zM7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z"/></svg>
+                    <span class="label">Projetos</span>
+                </div>
+                <div class="pixel-block website" data-info="website" aria-label="Visitar meu website">
+                    <svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.22-1.79L9 14v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 3.08-2.07 5.95-4.9 7.39z"/></svg>
+                    <span class="label">Website</span>
+                </div>
+                <div class="pixel-block linkedin" data-info="linkedin" aria-label="Conectar no LinkedIn">
+                    <svg class="icon" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    <span class="label">LinkedIn</span>
+                </div>
+            </div>
+        </div>
+        <div id="nuvem1" class="cloud">
+            <img src="./assets/Nuvem.png" alt="Nuvem do Mario" onerror="this.style.display='none';">
+        </div>
+        <div id="nuvem2" class="cloud">
+            <img src="./assets/Nuvem.png" alt="Nuvem do Mario" onerror="this.style.display='none';">
+        </div>
+        <div class="bloco-info-extra" data-info="surpresa">
+            <img src="assets/Item misterioso de Mario Bros NES.gif" alt="Bloco de Interrogação Animado">
+        </div>
+        <div class="footer-retro">
+            <p>Gabriel Ramon (Nickname: RamonTheDeveloper) &copy; 2025 Todos os direitos reservados</p>
+        </div>
+    </div>
+    <div id="info-window" class="info-window">
+        <div id="info-content"></div>
+        <button id="close-button">Fechar</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

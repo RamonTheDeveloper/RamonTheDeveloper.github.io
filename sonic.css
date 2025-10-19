@@ -1,0 +1,184 @@
+body {
+    margin: 0;
+    font-family: 'Press Start 2P', monospace;
+    overflow: hidden;
+    background: #000;
+}
+
+#sonic-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100vw; height: 100vh;
+    background: url('assets/Background_Sonic.webp') center bottom / cover no-repeat;
+    z-index: 9999;
+    overflow: hidden;
+    animation: fadeIn 1.2s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#sonic-content {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10001;
+}
+
+#sonic-content h2 {
+    color: #fff;
+    font-size: 2.1rem;
+    margin-bottom: 2.3rem;
+    letter-spacing: 3px;
+    text-shadow:
+      0 0 8px #00f6ff,
+      3px 3px 0 #000,
+      -3px -3px 0 #0ff,
+      0 0 20px #0ff;
+    filter: drop-shadow(2px 2px 0 #000);
+    animation: glowTitle 2s infinite alternate;
+}
+@keyframes glowTitle {
+    from { text-shadow: 0 0 12px #0ff, 3px 3px 0 #000; }
+    to { text-shadow: 0 0 28px #fff, 4px 4px 0 #0ff; }
+}
+
+#btn-start {
+    background: linear-gradient(90deg, #00c3ff 60%, #0066ff 100%);
+    color: #fff;
+    border: 4px solid #000;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.3rem;
+    padding: 1.1rem 3.5rem;
+    box-shadow: 0 6px 0 #1b3269, 0 0 0 #000;
+    cursor: pointer;
+    transition: 
+      transform 0.15s,
+      box-shadow 0.15s;
+    outline: none;
+    text-shadow: 2px 2px #003;
+    border-radius: 6px;
+    animation: pulseBtn 1.5s infinite;
+}
+@keyframes pulseBtn {
+    0%,100% { box-shadow: 0 6px 0 #1b3269; }
+    50% { box-shadow: 0 12px 10px #00eaff88; transform: scale(1.04); }
+}
+#btn-start:active {
+    transform: translateY(4px) scale(0.98);
+    box-shadow: 0 2px 0 #1b3269;
+}
+
+/* Efeito scanline (opcional) */
+.scanlines {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.07) 0,
+      rgba(0,0,0,0.07) 2px,
+      transparent 2px,
+      transparent 8px
+    );
+    mix-blend-mode: multiply;
+}
+
+/* CRT Scanlines + Vignette */
+.crt {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    /* Scanlines */
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.11) 0px,
+      rgba(0,0,0,0.11) 2px,
+      transparent 2px,
+      transparent 8px
+    );
+    /* Vignette (borda escura) */
+    box-shadow:
+        inset 0 0 120px 20px #000,
+        inset 0 0 70px 10px #222;
+    /* Leve distorção */
+    mix-blend-mode: multiply;
+    opacity: 0.45;
+    transition: opacity 0.3s;
+}
+
+.credit-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    padding: 1rem 0 0.7rem 0;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px #000, 0 0 8px #00f6ff;
+    letter-spacing: 1px;
+    opacity: 0.93;
+    z-index: 100002; /* maior que o CRT */
+    filter: drop-shadow(2px 2px 0 #000);
+    pointer-events: none;
+    user-select: none;
+}
+
+#btn-start {
+    /* Estilo retrô já existente */
+    background: linear-gradient(90deg, #00c3ff 60%, #0066ff 100%);
+    color: #fff;
+    border: 4px solid #000;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1.3rem;
+    padding: 1.1rem 3.5rem;
+    box-shadow: 0 6px 0 #1b3269;
+    cursor: pointer;
+    transition: 
+      transform 0.15s,
+      box-shadow 0.15s;
+    outline: none;
+    text-shadow: 2px 2px #003;
+    border-radius: 6px;
+    animation: pulseBtn 1.5s infinite;
+    /* Adiciona vibração ao hover */
+}
+@keyframes pulseBtn {
+    0%,100% { box-shadow: 0 6px 0 #1b3269; }
+    50% { box-shadow: 0 12px 10px #00eaff88; transform: scale(1.04); }
+}
+#btn-start:hover, #btn-start:focus {
+    animation: vibrate 0.3s linear;
+    box-shadow: 0 0 15px #00eaff, 0 6px 0 #1b3269;
+    outline: 2px solid #0ff;
+}
+@keyframes vibrate {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+#fade-transition {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 200000;
+    transition: opacity 0.8s;
+}
+#fade-transition.active {
+    opacity: 1;
+}

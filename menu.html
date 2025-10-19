@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Entrada Retro - Sonic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sonic.css">
+</head>
+<body>
+    <div id="sonic-overlay">
+        <div id="sonic-content">
+            <h2>WELCOME TO RAMON’S ZONE</h2>
+            <button id="btn-start">Entrar</button>
+        </div>
+        <footer class="credit-footer">
+            Gabriel Ramon / RamonTheDeveloper64 — &copy; 2025 Todos os direitos reservados
+        </footer>
+        <div class="crt"></div>
+        <audio id="sonic-audio" src="assets/sonic-cd-yeah.mp3" preload="auto"></audio>
+        <div id="fade-transition"></div>
+    </div>
+        <div class="crt"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const btn = document.getElementById("btn-start");
+          const audio = document.getElementById("sonic-audio");
+          btn.addEventListener("click", function () {
+              audio.volume = 1;
+              audio.currentTime = 0;
+              audio.play();
+          });
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+         const btn = document.getElementById("btn-start");
+         const audio = document.getElementById("sonic-audio");
+         const fade = document.getElementById("fade-transition");
+         btn.addEventListener("click", function () {
+        audio.volume = 1;
+        audio.currentTime = 0;
+        audio.play();
+        fade.classList.add("active");
+        setTimeout(function () {
+            window.location.href = "index.html"; // altere para o nome correto!
+        }, 900); // tempo um pouco maior que o transition
+    });
+});
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,121 @@
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
+        body {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #E0FF00;
+            animation: slideIn 0.3s ease;
+        }
+        @keyframes slideIn {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        .nav-container {
+            box-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00;
+        }
+    /* Efeito de hover para os cards de projeto */
+        .project-card:hover {
+        transform: translateY(-5px);
+        border-color: #34D399; /* Um verde mais brilhante no hover */
+}
+
+    /* Garante que o texto justificado funcione bem */
+        .texto-justificado {
+        text-align: justify;
+        hyphens: auto;
+}
+    /* A regra para estilizar todos os títulos de seção */
+        section h2 {
+        font-size: 1.75rem; /* Um pouco maior que o texto normal */
+        color: #6EE7B7;     /* Um verde-menta mais brilhante para destaque */
+        margin-bottom: 1.5rem; /* Aumenta o espaço abaixo do título */
+}
+    /* Deixa o título do projeto mais destacado */
+        .project-card h3 {
+        color: #A7F3D0; /* Um verde bem claro, quase branco */
+}
+
+    /* Transforma o link 'Ver Projeto' em um botão */
+        .project-card a {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        border: 1px solid #34D399;
+        border-radius: 4px;
+        color: #6EE7B7;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 0.2s, color 0.2s;
+}
+
+        .project-card a:hover {
+        background-color: #34D399;
+        color: #000000; /* Texto preto para contraste */
+}
+    /* Estilo de Destaque para o Título da Página Sobre Mim */
+#titulo-jornada {
+    position: relative; /* Necessário para posicionar a linha abaixo */
+    display: inline-block; /* Faz o container ter o tamanho do texto */
+    padding-bottom: 0.5rem; /* Espaço entre o texto e a linha */
+}
+
+#titulo-jornada::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* Começa no meio */
+    transform: translateX(-50%); /* Centraliza a linha perfeitamente */
+    width: 60%; /* A linha terá 60% da largura do título */
+    height: 4px;
+    background: linear-gradient(90deg, #6EE7B7, #34D399); /* O gradiente verde */
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgba(52, 211, 153, 0.7); /* O efeito de brilho */
+}
+    /* EFEITO DE BRILHO 'NEON' PARA MENU E RODAPÉ */
+
+.nav-container {
+    /* Sombra verde projetada para baixo */
+    box-shadow: 0 8px 20px -5px rgba(52, 211, 153, 0.7);
+}
+
+.footer-container {
+    /* Sombra verde projetada para cima */
+    box-shadow: 0 -8px 20px -5px rgba(52, 211, 153, 0.7);
+}
+    /* Destaque para os subtítulos da página Sobre Mim */
+.about-section h2 {
+    border-left: 4px solid #34D399; /* Uma cor sólida, mas discreta */
+    padding-left: 1rem; /* Um pequeno espaço entre a borda e o texto */
+    border-top-left-radius: 2px; /* Detalhe para suavizar o canto da borda */
+    border-bottom-left-radius: 2px;
+    margin-top: 2.5rem;
+}
+    /* CLASSE DE DESTAQUE PARA TÍTULOS DE SEÇÃO DO MENU PRINCIPAL */
+.titulo-secao {
+    position: relative; /* Necessário para a linha de destaque */
+    display: inline-block; /* Faz o container ter o tamanho do texto */
+    padding-bottom: 0.5rem; /* Espaço entre o texto e a linha */
+}
+
+.titulo-secao::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #6EE7B7, #34D399);
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgba(52, 211, 153, 0.7);
+}
+
