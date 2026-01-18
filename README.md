@@ -72,7 +72,7 @@ Notas:
 
 ## Créditos e Contatos
 - Desenvolvido por Gabriel Ramon (RamonTheDeveloper)  
-- Email: `nitroking2018@gmail.com`  
+- Email: `gabrielramonsouza20@gmail.com`  
 - LinkedIn: https://linkedin.com/in/ramonoficial/  
 - GitHub: https://github.com/RamonTheDeveloper
 
